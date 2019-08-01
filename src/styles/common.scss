@@ -1,0 +1,391 @@
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+  display: -webkit-inline-flex;
+}
+
+.flex-centered {
+  @extend .flex;
+  @extend .align-items-center;
+  @extend .justify-space-center;
+}
+
+@mixin flex-($value) {
+  flex: $value;
+  -webkit-flex: $value;
+}
+
+.flex-0 {
+  @include flex-(0);
+}
+
+.flex-1 {
+  @include flex-(1);
+}
+
+.flex-3 {
+  @include flex-(3);
+}
+
+.flex-wrap {
+  @extend .flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+
+.flex-column {
+  @extend .flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+}
+
+.flex-centered-column {
+  @extend .flex-centered;
+  @extend .flex-column;
+}
+
+@mixin align-items($position) {
+  align-items: $position;
+  -webkit-align-items: $position;
+}
+
+.align-items-center {
+  @include align-items(center);
+}
+
+.align-items-end {
+  @include align-items(end);
+}
+
+@mixin align-self($position) {
+  align-self: $position;
+  -webkit-align-self: $position;
+}
+
+.align-self-center {
+  @include align-self(center);
+}
+
+.align-self-end {
+  @include align-self(flex-end);
+}
+
+@mixin justify-space($position) {
+  justify-content: $position;
+  -webkit-justify-content: $position;
+}
+
+.justify-space-center {
+  @include justify-space(center);
+}
+
+.justify-space-between {
+  @include justify-space(space-between);
+}
+
+.justify-space-around {
+  @include justify-space(space-around);
+}
+
+.justify-space-end {
+  @include justify-space(flex-end);
+}
+
+.justify-space-start {
+  @include justify-space(flex-start);
+}
+
+.box-sizing {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.full-w {
+  width: 100%;
+}
+
+.full-h {
+  height: 100%;
+}
+
+/**
+ * MARGIN
+ */
+@mixin margin($pixels) {
+  margin: $pixels;
+}
+
+.margin-15 {
+  @include margin(15px);
+}
+
+.margin-20 {
+  @include margin(20px);
+}
+
+/**
+ * MARGIN-LEFT AND MARGIN-RIGHT
+ */
+@mixin mleft-right($pixels) {
+  margin: 0 $pixels;
+}
+
+.mleft-right-5 {
+  @include mleft-right(5px);
+}
+
+.mleft-right-15 {
+  @include mleft-right(15px);
+}
+
+/**
+ * MARGIN-LEFT
+ */
+@mixin mleft($pixels) {
+  margin-left: $pixels;
+}
+
+.mleft-3 {
+  @include mleft(3px);
+}
+
+.mleft-5 {
+  @include mleft(5px);
+}
+
+.mleft-8 {
+  @include mleft(8px);
+}
+
+.mleft-10 {
+  @include mleft(10px);
+}
+
+.mleft-15 {
+  @include mleft(15px);
+}
+
+/**
+ * MARGIN-RIGHT
+ */
+@mixin mright($pixels) {
+  margin-right: $pixels;
+}
+
+.mright-2 {
+  @include mright(2px);
+}
+
+.mright-5 {
+  @include mright(5px);
+}
+
+.mright-10 {
+  @include mright(10px);
+}
+
+.mright-15 {
+  @include mright(15px);
+}
+
+/**
+ * MARGIN-BOTTOM
+ */
+@mixin mbottom($pixels) {
+  margin-bottom: $pixels;
+}
+
+.mbottom-5 {
+  @include mbottom(5px);
+}
+
+.mbottom-15 {
+  @include mbottom(15px);
+}
+
+/**
+ * MARGIN TOP
+ */
+@mixin mtop($pixels) {
+  margin-top: $pixels;
+}
+
+.mtop-1 {
+  @include mtop(1px);
+}
+
+.mtop-3 {
+  @include mtop(3px);
+}
+
+.mtop-5 {
+  @include mtop(5px);
+}
+
+.mtop-7 {
+  @include mtop(7px);
+}
+
+.mtop-10 {
+  @include mtop(10px);
+}
+
+.mtop-15 {
+  @include mtop(15px);
+}
+
+.mtop-20 {
+  @include mtop(20px);
+}
+
+/**
+ * PADDING
+ */
+@mixin padding($pixels) {
+  padding: $pixels;
+}
+
+.padding-5 {
+  @include padding(5px);
+}
+
+.padding-10 {
+  @include padding(10px);
+}
+
+.padding-15 {
+  @include padding(15px);
+}
+
+.padding-20 {
+  @include padding(20px);
+}
+
+/**
+ * PADDING-BOTTOM
+ */
+@mixin pbottom($pixels) {
+  padding-bottom: $pixels;
+}
+
+.pbottom-10 {
+  @include pbottom(10px);
+}
+
+.pbottom-60 {
+  @include pbottom(60px);
+}
+
+/**
+ * PADDING-TOP
+ */
+@mixin ptop($pixels) {
+  padding-top: $pixels;
+}
+
+.ptop-10 {
+  @include ptop(10px);
+}
+
+.ptop-20 {
+  @include ptop(20px);
+}
+
+/**
+ * PADDING-LEFT
+ */
+@mixin pleft($pixels) {
+  padding-left: $pixels;
+}
+
+.pleft-5 {
+  @include pleft(5px);
+}
+
+.pleft-15 {
+  @include pleft(15px);
+}
+
+/**
+ * PADDING-RIGHT
+ */
+@mixin pright($pixels) {
+  padding-right: $pixels;
+}
+
+.pright-10 {
+  @include pright(10px);
+}
+
+/**
+ * PADDING-RIGHT AND PADDING-LEFT
+ */
+@mixin pright-left($pixels) {
+  padding: 0 $pixels;
+}
+
+.pright-left-5 {
+  @include pright-left(5px);
+}
+
+.pright-left-15 {
+  @include pright-left(15px);
+}
+
+@mixin ptop-bottom($pixels) {
+  padding: $pixels 0;
+}
+
+.ptop-bottom-10 {
+  @include ptop-bottom(10px);
+}
+
+/**
+ * BORDER
+ */
+@mixin border($color) {
+  border: solid 1px $color;
+}
+
+.border-ccc {
+  @include border(#cccccc);
+}
+
+/**
+ * BORDER-RADIUS
+ */
+@mixin border-radius($pixels) {
+  border-radius: $pixels;
+}
+
+.border-radius-5 {
+  @include border-radius(5px);
+}
+
+/**
+ * FONT-WEIGHT
+ */
+@mixin font-weight($size) {
+  font-weight: $size;
+}
+
+.font-weight-600 {
+  @include font-weight(600);
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+.pointer {
+  cursor: pointer;
+}

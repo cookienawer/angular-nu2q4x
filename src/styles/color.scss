@@ -1,0 +1,69 @@
+@import 'colors';
+
+.color-white {
+  color: white;
+}
+
+.color-black {
+  color: $black;
+}
+
+.color-dark {
+  color: $dark;
+}
+
+.color-333 {
+  color: $color-grey-00;
+}
+
+.color-666 {
+  color: $color-grey-10;
+}
+
+.color-777 {
+  color: $color-grey-20;
+}
+
+.color-979797 {
+  color: $color-grey-30;
+}
+
+.color-999 {
+  color: $color-grey-40;
+}
+
+.color-ccc {
+  color: $color-grey-50;
+}
+
+.color-ddd {
+  color: $color-grey-60;
+}
+
+.color-fff {
+  color: $color-grey-110;
+}
+
+.back-666 {
+  background-color: $color-grey-10;
+}
+
+.back-white {
+  background-color: white;
+}
+
+.back-f1 {
+  background-color: $color-grey-80;
+}
+
+.back-f3 {
+  background-color: $color-grey-90;
+}
+
+.back-f7 {
+  background-color: $color-grey-100;
+}
+
+.back-eee {
+  background-color: $color-grey-70;
+}

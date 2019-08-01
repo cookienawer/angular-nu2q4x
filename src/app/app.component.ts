@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ViewEncapsulation
+} from '@angular/core';
+import { ConfigurationService } from './core/configuration/configuration.service';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  selector: 'ftp-viewer-app',
+  encapsulation: ViewEncapsulation.None,
+  templateUrl: './app.component.html'
 })
-export class AppComponent  {
-  name = 'Angular';
+export class AppComponent {
+  constructor( private configurationService: ConfigurationService) {
+    this.configurationService.initConfig();
+  }
 }

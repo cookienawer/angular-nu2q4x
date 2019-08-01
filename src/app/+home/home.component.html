@@ -1,0 +1,147 @@
+<img class="big-header" src="assets/img/header.jpg">
+<img class="mobile-header" src="assets/img/header-mobile.jpg">
+<mat-toolbar color="primary">
+  <span class="flex-1 color-white">My Gallery</span>
+  <span class="color-white pointer" (click)="logout()" *ngIf="isAuthenticated | async">Logout</span>
+</mat-toolbar>
+
+<form novalidate [formGroup]="loginForm" class="flex-centered-column" *ngIf="!(isAuthenticated | async)">
+  <h4>Login</h4>
+  <mat-form-field>
+    <input matInput placeholder="Login" formControlName="login">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Password" formControlName="password" type="password">
+  </mat-form-field>
+  <button mat-raised-button type="button" (click)="onSubmit()" class="block margint-s" color="primary">Login
+  </button>
+</form>
+
+<div class="flex-column padding-20" *ngIf="isAuthenticated | async">
+  <mat-tab-group>
+    <mat-tab label="Private" *ngIf="ftpUserRootDir">
+      <div class="flex-wrap breadcrumb-container" *ngIf="userFolder.paths.length > 0">
+        <img src="assets/img/home.png" class="mright-5" (click)="goToUserFolder(0)">
+        <mat-card class="mright-5 mtop-10 mbottom-15 breadcrumb"
+                  *ngFor="let folder of userFolder.paths; let i = index;"
+                  (click)="goToUserFolder(i + 1)">
+          <span>{{folder}}</span>
+        </mat-card>
+      </div>
+      <div class="flex-wrap">
+        <mat-card class="mright-10 folder mtop-10 mbottom-15" *ngFor="let folder of ftpUserRootDir.folders"
+                  (click)="selectUserFolder(folder)">
+          <h3>{{folder.name}}</h3>
+        </mat-card>
+      </div>
+
+      <button mat-raised-button color="primary" (click)="downloadAll(ftpUserRootDir, false)">
+        Download all from active folder
+      </button>
+      <div *ngIf="ftpUserVideoFiles.length > 0" class="flex-column">
+        <h4>Videos</h4>
+        <div class="flex-wrap">
+          <div class="video-container" *ngFor="let file of ftpUserVideoFiles; let ind = index;">
+            <vg-player>
+              <vg-overlay-play></vg-overlay-play>
+              <vg-buffering></vg-buffering>
+
+              <vg-scrub-bar>
+                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+              </vg-scrub-bar>
+
+              <vg-controls [vgAutohide]="true" [vgAutohideTime]="5">
+                <vg-play-pause></vg-play-pause>
+
+                <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+                <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+                <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+                <vg-mute></vg-mute>
+                <vg-volume></vg-volume>
+
+                <vg-fullscreen></vg-fullscreen>
+              </vg-controls>
+              <video [vgMedia]="media" #media id="{{i}}" preload="auto">
+                <source src="{{file.src}}">
+              </video>
+            </vg-player>
+            <div class="download-video flex">
+              <span class="font-15 flex-1">{{file.name}}</span>
+              <button mat-raised-button class="flex-1" (click)="downloadFile(file)">Download</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="ftpUserImageFiles.length > 0" class="flex-column">
+        <h4>Images</h4>
+        <modal-gallery [modalImages]="ftpUserImageFiles" class="flex-wrap" [downloadable]="true"
+                       [showDownloadButton]="true"></modal-gallery>
+      </div>
+    </mat-tab>
+    <mat-tab label="Shared" *ngIf="ftpSharedRootDir">
+      <div class="flex-wrap breadcrumb-container" *ngIf="sharedFolder.paths.length > 0">
+        <img src="assets/img/home.png" class="mright-5" (click)="goToSharedFolder(0)">
+        <mat-card class="mright-5 mtop-10 mbottom-15 breadcrumb"
+                  *ngFor="let folder of sharedFolder.paths; let i = index;"
+                  (click)="goToSharedFolder(i + 1)">
+          <span>{{folder}}</span>
+        </mat-card>
+      </div>
+      <div class="flex-wrap">
+        <mat-card class="mright-10 folder mtop-10 mbottom-15" *ngFor="let folder of ftpSharedRootDir.folders"
+                  (click)="selectSharedFolder(folder)">
+          <h3>{{folder.name}}</h3>
+        </mat-card>
+      </div>
+      <button mat-raised-button color="primary" (click)="downloadAll(ftpSharedRootDir, true)">
+        Download all from active folder
+      </button>
+      <div *ngIf="ftpSharedVideoFiles.length > 0" class="flex-column">
+        <h4>Videos</h4>
+        <div class="flex-wrap">
+          <div class="video-container" *ngFor="let file of ftpSharedVideoFiles; let ind = index;">
+            <vg-player>
+              <vg-overlay-play></vg-overlay-play>
+              <vg-buffering></vg-buffering>
+
+              <vg-scrub-bar>
+                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+              </vg-scrub-bar>
+
+              <vg-controls [vgAutohide]="true" [vgAutohideTime]="5">
+                <vg-play-pause></vg-play-pause>
+
+                <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+                <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+                <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+                <vg-mute></vg-mute>
+                <vg-volume></vg-volume>
+
+                <vg-fullscreen></vg-fullscreen>
+
+              </vg-controls>
+              <video [vgMedia]="media" #media id="{{ind}}" preload="auto">
+                <source src="{{file.src}}">
+              </video>
+            </vg-player>
+            <div class="download-video flex">
+              <span class="font-15 flex-1">{{file.name}}</span>
+              <button mat-raised-button class="flex-1" (click)="downloadFile(file)">Download</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="ftpSharedImageFiles.length > 0" class="flex-column">
+        <h4>Images</h4>
+        <modal-gallery [modalImages]="ftpSharedImageFiles" class="flex-wrap" [downloadable]="true"
+                       [showDownloadButton]="true"></modal-gallery>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

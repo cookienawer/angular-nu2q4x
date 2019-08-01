@@ -1,0 +1,279 @@
+.font-9 {
+  font-size: 9px;
+}
+
+.font-10 {
+  font-size: 10px;
+}
+
+.font-11 {
+  font-size: 11px;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-13 {
+  font-size: 13px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-15 {
+  font-size: 15px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-17 {
+  font-size: 17px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-21 {
+  font-size: 21px;
+}
+
+.font-22 {
+  font-size: 22px;
+}
+
+.font-23 {
+  font-size: 23px;
+}
+
+.font-24 {
+  font-size: 24px;
+}
+
+.font-30 {
+  font-size: 30px;
+}
+
+.font-28 {
+  font-size: 28px;
+}
+
+.en-0-3em {
+  font-size: 0.3em;
+}
+
+.en-0-5em {
+  font-size: 0.5em;
+}
+
+.en-0-6em {
+  font-size: 0.6em;
+}
+
+.en-0-7em {
+  font-size: 0.7em;
+}
+
+.en-0-8em {
+  font-size: 0.8em;
+}
+
+.en-0-9em {
+  font-size: 0.9em;
+}
+
+.en-0-95em {
+  font-size: 0.95em;
+}
+
+.en-1-0em {
+  font-size: 1.0em;
+}
+
+.en-1-1em {
+  font-size: 1.1em;
+}
+
+.en-1-2em {
+  font-size: 1.2em;
+}
+
+.en-1-3em {
+  font-size: 1.3em;
+}
+
+.en-1-4em {
+  font-size: 1.4em;
+}
+
+.en-1-5em {
+  font-size: 1.5em;
+}
+
+.en-1-6em {
+  font-size: 1.6em;
+}
+
+.en-1-7em {
+  font-size: 1.7em;
+}
+
+.en-1-75em {
+  font-size: 1.75em;
+}
+
+.en-1-8em {
+  font-size: 1.8em;
+}
+
+.en-1-9em {
+  font-size: 1.9em;
+}
+
+.en-2em {
+  font-size: 2em;
+}
+
+.en-2-1em {
+  font-size: 2.1em;
+}
+
+.en-2-2em {
+  font-size: 2.2em;
+}
+
+.en-2-3em {
+  font-size: 2.3em;
+}
+
+.en-2-4em {
+  font-size: 2.4em;
+}
+
+.en-2-5em {
+  font-size: 2.5em;
+}
+
+.en-2-6em {
+  font-size: 2.6em;
+}
+
+.en-2-7em {
+  font-size: 2.7em;
+}
+
+.en-2-8em {
+  font-size: 2.8em;
+}
+
+.en-2-9em {
+  font-size: 2.9em;
+}
+
+.en-3em {
+  font-size: 3em;
+}
+
+.en-3-3em {
+  font-size: 3.3em;
+}
+
+.en-3-2em {
+  font-size: 3.2em;
+}
+
+.en-3-5em {
+  font-size: 3.5em;
+}
+
+.en-3-7em {
+  font-size: 3.7em;
+}
+
+.en-4em {
+  font-size: 4em;
+}
+
+.en-4-5em {
+  font-size: 4.5em;
+}
+
+.en-5em {
+  font-size: 5em;
+}
+
+.en-6em {
+  font-size: 6em;
+}
+
+.en-7em {
+  font-size: 7em;
+}
+
+.en-8em {
+  font-size: 8em;
+}
+
+@mixin en-rotate($grades) {
+  -webkit-transform: rotate($grades);
+  -ms-transform: rotate($grades);
+  transform: rotate($grades);
+  -moz-transform: rotate($grades);
+  -o-transform: rotate($grades);
+}
+
+.en-rotate-45 {
+  @include en-rotate(45deg);
+}
+
+.en-rotate-90 {
+  @include en-rotate(90deg);
+}
+
+.en-rotate-120 {
+  @include en-rotate(120deg);
+}
+
+.en-rotate-180 {
+  @include en-rotate(180deg);
+}
+
+.en-rotate-225 {
+  @include en-rotate(225deg);
+}
+
+.en-rotate-270 {
+  @include en-rotate(270deg);
+}
+
+.en-rotate-315 {
+  @include en-rotate(315deg);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}

@@ -1,0 +1,50 @@
+$black-87-opacity: rgba(black, 0.87);
+$en-colors: (
+  50: #ffebee,
+  100: #ffebee,
+  200: #4c4c4a,
+  300: #4c4c4a,
+  400: #4c4c4a,
+  500: #4c4c4a,
+  600: #4c4c4a,
+  700: #4c4c4a,
+  800: #4c4c4a,
+  900: #4c4c4a,
+  A100: #4c4c4a,
+  A200: #4c4c4a,
+  A400: #4c4c4a,
+  A700: #4c4c4a,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: $black-87-opacity,
+    900: $black-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  )
+);
+
+$black: #000000;
+$dark: #1a1a1a;
+$color-grey-00: #333333;
+$color-grey-05: #4d4d4d;
+$color-grey-10: #666666;
+$color-grey-20: #777777;
+$color-grey-30: #979797;
+$color-grey-40: #999999;
+$color-grey-50: #cccccc;
+$color-grey-60: #dddddd;
+$color-grey-70: #eeeeee;
+$color-grey-75: #e6e6e6;
+$color-grey-80: #f1f1f1;
+$color-grey-90: #f3f3f3;
+$color-grey-100: #f7f7f7;
+$color-grey-110: #ffffff;

@@ -1,0 +1,17 @@
+@import 'main';
+@import 'common';
+@import 'color';
+@import 'fonts';
+@import 'material';
+@import '~@angular/material/theming';
+$fa-font-path: "../../node_modules/font-awesome/fonts" !default;
+@import "~font-awesome/scss/font-awesome";
+@import "fonts/videogular";
+
+@include mat-core();
+
+$en-primary: mat-palette($en-colors);
+$en-accent: mat-palette($en-colors, A200, A100, A400);
+$en-theme: mat-light-theme($en-primary, $en-accent);
+
+@include angular-material-theme($en-theme);

@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+}
+
+mat-sidenav.mat-drawer {
+  top: 56px;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:focus {
+  outline: none;
+}
